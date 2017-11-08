@@ -38,7 +38,7 @@ These are the fields of the thing and it's constrains:
     "productGTIN": "+9999999",
     "childrenProductsIds": [],
     "enabled": true
-    }
+ }
 ```
 ## URLs
 - api/products/{optional=startat}{optional=quantity}
