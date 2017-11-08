@@ -1,6 +1,6 @@
 # ProductAPI
 API to Manage Products on Lorien. Used to create, update, read and delete Products. Also responsible for managing its children.
-## Thing Data Format
+## Product Data Format
 These are the fields of the thing and it's constrains:
 - productId: Id of the Product given by de Database.
   - Integer
