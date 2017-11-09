@@ -54,6 +54,9 @@ These are the fields of the thing and it's constrains:
     - Body: Product JSON
   - Delete: Disable Product with productId = ID
 
+- api/products/list{productid}{productid}
+    - Get: Return List of Products with productid = ID
+
 - api/products/childrenproducts/{parentId}
   - Get: Return List of Products which the parent is parentId
   - Post: Insert the Product with the JSON in the body as child of the parent Product

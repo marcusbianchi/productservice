@@ -9,7 +9,7 @@ using productservice.Model;
 
 namespace productservice.Controllers
 {
-    [Route("api/products/childrenproducts/")]
+    [Route("api/products/'childrenproducts/")]
     public class ChildrenProductsController : Controller
     {
         private readonly ApplicationDbContext _context;

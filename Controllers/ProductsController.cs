@@ -36,6 +36,16 @@ namespace productservice.Controllers
             return Ok(products);
         }
 
+        [HttpGet("list/")]
+        [ResponseCache(CacheProfileName = "productscache")]
+        public async Task<IActionResult> GetList([FromQuery]int[] productId)
+        {
+            var products = await _context.Products
+            .Where(x => productId.Contains(x.productId))
+            .ToListAsync();
+            return Ok(products);
+        }
+
         [HttpGet("{id}")]
         [ResponseCache(CacheProfileName = "productscache")]
         public async Task<IActionResult> Get(int id)
