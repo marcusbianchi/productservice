@@ -29,7 +29,7 @@ namespace productservice.Controllers
 
             if (parentThing != null)
             {
-                var things = await _context.Products
+                var things = await _context.Products.Include(x => x.additionalInformation)
                 .Where(x => parentThing.childrenProductsIds.Contains(x.productId))
                 .ToListAsync();
 

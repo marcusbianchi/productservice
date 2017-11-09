@@ -26,6 +26,9 @@ These are the fields of the thing and it's constrains:
 - childrenProductsIds: List of Id of Products from which this one is parent.
   - Array Integer
   - Ignored on Create and Update
+- additionalInformation: List of additional information related to de product.
+  - Array AdditionalInformation
+  - Optional
   
 ### JSON Example:
 ```json
@@ -36,8 +39,13 @@ These are the fields of the thing and it's constrains:
     "producDescription": "Teste Decription",
     "producCode": "TesteCode",
     "productGTIN": "+9999999",
-    "childrenProductsIds": [],
-    "enabled": true
+    "childrenProductsIds": [1,2],
+    "enabled": true,
+    "additionalInformation": [
+    {
+      "information": "Densidade",
+      "value": "60"
+    }]
  }
 ```
 ## URLs

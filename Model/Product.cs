@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +22,6 @@ namespace productservice.Model
         public int[] childrenProductsIds { get; set; }
         [DefaultValue(true)]
         public bool enabled { get; set; }
+        public ICollection<AdditionalInformation> additionalInformation { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace productservice.Controllers
             if (quantity == 0)
                 quantity = 50;
             var products = await _context.Products
+            .Include(x => x.additionalInformation)
             .Where(x => x.enabled == true)
             .OrderBy(x => x.productId)
             .Skip(startat)
@@ -41,6 +42,7 @@ namespace productservice.Controllers
         public async Task<IActionResult> GetList([FromQuery]int[] productId)
         {
             var products = await _context.Products
+            .Include(x => x.additionalInformation)
             .Where(x => productId.Contains(x.productId))
             .ToListAsync();
             return Ok(products);
@@ -51,6 +53,7 @@ namespace productservice.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var product = await _context.Products
+            .Include(x => x.additionalInformation)
             .OrderBy(x => x.productId)
             .Where(x => x.productId == id)
             .FirstOrDefaultAsync();
